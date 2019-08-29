@@ -1,0 +1,12 @@
+<!--
+<router-outlet *ngIf="isAthenticated()"></router-outlet>
+<app-login *ngIf="!isAthenticated()"></app-login>
+<app-profil *ngIf="isAthenticated()"></app-profil>
+<app-uploadtest></app-uploadtest>
+<router-outlet *ngIf="isAthenticated()"></router-outlet>
+<app-login *ngIf="!isAthenticated()"></app-login>
+<app-inscription></app-inscription>
+<app-chat></app-chat> -->
+<router-outlet *ngIf="isAthenticated()"></router-outlet>
+
+<router-outlet *ngIf="!isAthenticated()"  name="notconnected" ></router-outlet>

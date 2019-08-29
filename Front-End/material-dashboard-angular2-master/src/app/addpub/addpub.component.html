@@ -1,0 +1,54 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Ajouter une publication</h4>
+                  </div>
+                  <div class="card-body">
+                      <form #f="ngForm" (ngSubmit)="addpublication(f.value)">
+                        
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Titre de la publication" name="nom" ngModel required>
+                                  </mat-form-field>
+                              </div>
+                              
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Discription de la publication" name="description" ngModel required>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <select matNativeControl name="type" id="typeselector" placeholder="Choisir le type de votre publication" ngModel required>
+                                    <option>Statut</option>
+                                    <option>Video</option>
+                                    <option>Fichier</option>
+                                  </select>
+                                </mat-form-field>
+                            </div>
+                            
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <textarea matInput placeholder="Contenu" name="contenu" ngModel required></textarea>
+                                  
+                                </mat-form-field>
+                            </div>
+                                                  
+                          <div class="col-md-6" id="Fichier" >
+                            <input type="file" placeholder="Choisir un fichier" (change)="onFileSelected($event)" name="fichier" *ngIf="type === Fichier"  required>
+                      </div>
+                          
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Publier</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+

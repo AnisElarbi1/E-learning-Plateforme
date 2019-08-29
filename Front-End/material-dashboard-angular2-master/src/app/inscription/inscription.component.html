@@ -1,0 +1,82 @@
+<div class="main-content" style="
+width:70%;
+display: block;
+margin-left: 25%;
+margin-right: 50%;" >
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Inscription</h4>
+                      <p class="card-category">Remplire le formulaire</p>
+                  </div>
+                  <div class="card-body">
+                      <form #f="ngForm" (ngSubmit)="addUser(f.value)">
+                          <div class="row">
+                              <div class="col-md-3">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Username" name="username" ngModel required>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Nom" name="nom" ngModel required>
+                                </mat-form-field>
+                            </div>
+                            
+                              <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Prenom" name="prenom" ngModel required>
+                                </mat-form-field>
+                            </div>
+
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email address" name="email" ngModel type="email"  required>
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Telephone" name="tel" ngModel required >
+                                </mat-form-field>
+                              </div>
+                              
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Adresse" name="adresse" ngModel type="text" required>
+                                </mat-form-field>
+                              </div>
+                          </div>
+                         
+                          <div class="col-md-3">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Mot de passe" name="password" ngModel type="password" required>
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-3">
+                            <mat-form-field class="example-full-width">
+                              <input matInput placeholder="Confirmer votre mot de passe" type="password"  required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3">
+                         
+                            <input type="file" placeholder="Choisir une photo" (change)="onFileSelected($event)" name="img"   required>
+                         
+                      </div>
+                          
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Inscription</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+

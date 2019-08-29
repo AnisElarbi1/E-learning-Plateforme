@@ -1,0 +1,45 @@
+
+<body style="background-image:url(assets/img/bg.png);background-size: cover;
+height: 100%;">
+
+<div class="main-content" style="
+width:70%;
+display: block;
+margin-left: 25%;
+margin-right: 50%;" >
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card" >
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Connexion</h4>
+                  </div>
+                  <div class="card-body">
+                      <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                          
+                              <div class="col-md-8">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Username" type="text" name="username" ngModel required>
+                                  </mat-form-field>
+                              </div>
+                         
+                          <div class="col-md-8">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Mot de passe" name="password" ngModel type="password" required>
+                              </mat-form-field>
+                          </div>
+                          
+                          
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Connexion</button>
+                          
+                      </form>
+                      <button mat-raised-button class="btn btn-danger pull-right" routerLink="/inscription" >Inscription</button>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+
+</body>

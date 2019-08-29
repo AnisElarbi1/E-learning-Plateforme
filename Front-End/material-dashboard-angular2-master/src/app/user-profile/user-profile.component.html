@@ -1,0 +1,80 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Modifier Profil</h4>
+                      <p class="card-category">Modifier les informations personnel</p>
+                  </div>
+                  <div class="card-body">
+                      <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
+                          <div class="row">
+                              <div class="col-md-5">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="{{user.username}}" disabled>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-3">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nom" name="nom" ngModel required>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Prenom" name="prenom" ngModel required>
+                                </mat-form-field>
+                            </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email address" name="email" ngModel type="email"  required>
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Telephone" name="tel" ngModel required >
+                                </mat-form-field>
+                              </div>
+                              
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Adresse" name="adresse" ngModel type="text" required>
+                                </mat-form-field>
+                              </div>
+                          </div>
+                         
+                          
+                          
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Modifier</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card card-profile">
+                  <div class="card-avatar">
+                      <a href="#">
+                          <img class="img" src="assets/img/faces/marc.jpg" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h6 class="card-category text-gray">Bienvenu {{user.username}} dans votre profil</h6>
+                      <h4 class="card-title">Nom : {{user.nom}}</h4>
+                      <h4 class="card-title">Prenom : {{user.prenom}}</h4>
+                      <h4 class="card-title">Email : {{user.email}}</h4>
+                      <h4 class="card-title">Adresse : {{user.adresse}}</h4>
+                      <h4 class="card-title">Téléphone : {{user.tel}}</h4>  
+                      <a href="#" class="btn btn-danger btn-round" *ngIf="isEns()">Liste de mes publications</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <img src="{{user.img}}" alt="{{imgupload}}" style="max-width:350px"/>
+
+</div>
